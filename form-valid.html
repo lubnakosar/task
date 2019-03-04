@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]>
+<html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>SHAFAY TEX</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+<style type="text/css">
+  .form-wrap{
+    padding: 15px;
+  }
+</style>
+</head>
+
+<body>  
+<!--body section
+======================-->
+<section>
+    <div class="container">
+      <div class="col-md-8 m-auto d-block form-wrap bg-light">
+        <h1 class="text-success text-center">Form submit</h1>
+          <form action="#" class="bg-light" onsubmit="return validation()">
+            <div class="form-group">
+              <label>User Name</label>
+              <input type="text" name="user" class="form-control" id="user" autocomplete="off"  />
+              <span id="username" class="text-danger "></span>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="text" name="pass" class="form-control" id="pass" autocomplete="off" />
+              <span id="passname" class="text-danger "></span>
+            </div>
+            <div class="form-group">
+              <label>Conform Password</label>
+              <input type="text" name="cpass" class="form-control" id="cpass" autocomplete="off"/>
+              <span id="cpassname" class="text-danger "></span>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="text" name="phone" class="form-control" id="phone" autocomplete="off" />
+              <span id="phonename" class="text-danger "></span>
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="text" name="email" class="form-control" id="email"autocomplete="off" />
+              <span id="emailname" class="text-danger "></span>
+            </div>
+            <div class="form-group">
+              <input type="submit" name="submit" value="submit" class="btn btn-success
+              " />
+            </div>
+          </form>
+    </div>
+  </div>
+</section>
+
+<!-- java script-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    // forms 
+
+</script>
+<script type="text/javascript">
+  function validation(){
+    var user = document.getElementById('user').value;
+    var password = document.getElementById('pass').value;
+    var cpassword = document.getElementById('cpass').value;
+    var phonenumber = document.getElementById('phone').value;
+    var Email = document.getElementById('email').value;
+    if(user == ""){
+      document.getElementById('username').innerHTML=" please add user name";
+      return false;
+    }
+    if((user.lenght <= 2) || (user.lenght > 20)){
+      document.getElementById('username').innerHTML=" please user lenght must be between 2 to 20 letter";
+      return false;
+    }
+    if(!isNaN(user)){
+      document.getElementById('username').innerHTML=" digit not allowed";
+      return false;
+    }
+
+    if(password == ""){
+      document.getElementById('passname').innerHTML=" please enter password";
+      return false;
+    }
+    if((password.lenght <= 2) || (password > 20)){
+      document.getElementById('username').innerHTML=" please user lenght must be between 2 to 20 letter";
+      return false;
+    }
+    if(password !=cpassword){
+      document.getElementById('cpassname').innerHTML=" please conform password not same";
+    }
+    if(phonenumber == ""){
+      document.getElementById('phonename').innerHTML=" please add vaild phone";
+      return false;
+    }
+    if(isNaN(phonenumber)){
+       document.getElementById('phonename').innerHTML=" please add digits only";
+      return false;
+    }
+    if(phonenumber.lenght!=10){
+      document.getElementById('phonename').innerHTML=" please phone number 10 digit only";
+      return false;
+    }
+    if(Email == ""){
+      document.getElementById('emailname').innerHTML=" please add vaild email";
+      return false;
+    }
+    if(Email.indexOF('@') <=0){
+      document.getElementById('emailname').innerHTML=" please add vaild email1";
+      return false;
+    }
+    if((Email.charAt(Email.lenght-4)!='.') && (Email.charAt(Email.lenght-3)!='.')){
+      document.getElementById('emailname').innerHTML=" please add vaild email1";
+      return false;
+    }
+//passname
+//cpassname
+//phonename
+//emailname
+  }
+</script>
+</body>
+</html>
