@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]>
+<html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-title" content="AppTitle">
+<title>array</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 8]>
+  <script src="js/html5.min.js"></script>
+  <script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>  
+<!-- java script-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script type="text/javascript">
+ 	
+var array = [1,2,3,4,5];
+// var color = ['red','blue','green'];
+// console.log(color);
+console.log(array);
+console.log(array.reverse());
+// console.log(color.sort().reverse());
+// console.log(color.reverse());
+var fact = 1;
+for (var i=array; i>1; i--){
+	fact = fact * i;
+}
+document.write(fact);
+console.log(fact);
+// function factorial(n) {
+//   if (n === 0) {
+//     return 1;
+//   }
+//   return n * factorial(n - 1);
+// }
+
+
+const factorial = (n) => {
+  let res = [];
+  while(n != 0){ 
+    //get all integers less than or equal to n
+    res.push(n);
+    n--;
+  }
+  return res.reduce((x, y) => {
+    return x * y; 
+    //reduce the array of integers into a single number via multiplication
+  });
+}
+
+const nums = [1, 2, 3, 4, 5];
+
+const factorialArr = (arr) => {
+  return arr.map(n => {
+    //iterate through a list of numbers and return the factorial of each
+    return factorial(n);
+  });
+}
+
+const result = factorialArr(nums);
+console.log(result) 
+</script>
+</body>
+</html>
